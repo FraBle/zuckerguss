@@ -1,0 +1,56 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/react,vscode,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=react,vscode,visualstudiocode
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### vscode ###
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# End of https://www.toptal.com/developers/gitignore/api/react,vscode,visualstudiocode
+
+# From create-react-app
+
+### dependencies ###
+/.pnp
+.pnp.js
+
+### testing ###
+/coverage
+
+### production ###
+/build
+
+### misc ###
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# End of create-react-app
