@@ -1,13 +1,16 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, useLocation } from "react-router-dom";
 import { Button, Nav, Sidebar } from "grommet";
+import _ from "lodash";
 
 import { Routes } from "shared/constants";
 
 const navItems = Object.values(Routes);
 
 export const Navbar = ({ gridArea, history }) => {
-  const [activeNavItem, setActiveNavItem] = React.useState("home");
+  const [activeNavItem, setActiveNavItem] = React.useState(
+    _.trimStart(useLocation()?.pathname, "/")
+  );
 
   return (
     <Sidebar background="brand" gridArea={gridArea}>

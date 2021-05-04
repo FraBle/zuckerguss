@@ -8,19 +8,26 @@
     },
     "license": "MIT",
     "dependencies": {
+        "adapterjs": "^0.15.5",
         "grommet": "^2.17.1",
         "grommet-icons": "^4.5.0",
+        "lodash": "^4.17.21",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-is": "^17.0.2",
         "react-router-dom": "^5.2.0",
-        "styled-components": "^5.2.3"
+        "react-use-websocket": "^2.6.1",
+        "styled-components": "^5.2.3",
+        "webrtc-streamer": "^0.6.3"
     },
     "devDependencies": {
         "@testing-library/dom": "^7.30.4",
         "@testing-library/jest-dom": "^5.12.0",
         "@testing-library/react": "^11.2.6",
         "@testing-library/user-event": "^13.1.5",
+        "faker": "^5.5.3",
+        "miragejs": "^0.1.41",
+        "moment": "^2.29.1",
         "react-scripts": "^4.0.3"
     },
     "scripts": {
