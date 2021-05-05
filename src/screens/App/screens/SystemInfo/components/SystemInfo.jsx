@@ -11,16 +11,14 @@ const SystemInfo = () => {
   const { lastJsonMessage, getWebSocket } = useWebSocket(
     `${process.env.REACT_APP_WEBSOCKET_URL}/system`,
     {
-      onOpen: () => console.log("opened"),
       //Will attempt to reconnect on all close events, such as server shutting down
-      shouldReconnect: (_) => false,
+      shouldReconnect: (_) => true,
     }
   );
 
   useEffect(() => {
     return () => {
       getWebSocket().close();
-      console.log("closed");
     };
   }, [getWebSocket]);
 

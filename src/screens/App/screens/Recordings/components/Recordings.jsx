@@ -1,9 +1,15 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { Box, List, Heading, Text, Grid, Spinner } from "grommet";
 import { DocumentCloud, DocumentStore } from "grommet-icons";
+import _ from "lodash";
+import queryString from "query-string";
 
 import VideoModal from "./VideoModal";
 import Filter from "./Filter";
+
+const CAMERA_FILTERS = ["front", "back"];
+const STORAGE_FILTERS = ["cloud", "local"];
+const ALLFILTERS = [...CAMERA_FILTERS, ...STORAGE_FILTERS];
 
 const Recordings = (props) => {
   const [recordings, setRecordings] = useState([]);
@@ -13,18 +19,30 @@ const Recordings = (props) => {
   const firstRender = useRef(true);
 
   const [filters, setFilters] = useState({
-    cameras: ["front", "back"],
-    storage: ["cloud", "local"],
+    cameras: CAMERA_FILTERS,
+    storage: STORAGE_FILTERS,
   });
   useLayoutEffect(() => {
     if (firstRender.current) {
       firstRender.current = false;
     } else {
-      fetch(`${process.env.REACT_APP_SERVER_URL}/recordings`)
+      fetch(
+        `${process.env.REACT_APP_SERVER_URL}/recordings?${queryString.stringify(
+          {
+            ..._.reduce(
+              _.concat(..._.values(filters)),
+              (obj, filter) => {
+                obj[filter] = _.includes(ALLFILTERS, filter);
+                return obj;
+              },
+              {}
+            ),
+          }
+        )}`
+      )
         .then((response) => response.json())
         .then((json) => setRecordings(json))
         .then(() => setIsLoading(false));
-      console.log(filters);
     }
   }, [filters]);
 
@@ -55,6 +73,12 @@ const Recordings = (props) => {
           {isLoading ? (
             <Box fill align="center" justify="center">
               <Spinner size="large" />
+            </Box>
+          ) : _.isEmpty(recordings?.recordings ?? []) ? (
+            <Box fill align="center" justify="center">
+              <Heading level={4}>
+                No recordings available at the moment.
+              </Heading>
             </Box>
           ) : (
             <List

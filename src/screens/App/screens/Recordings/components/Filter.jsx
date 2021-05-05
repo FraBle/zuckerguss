@@ -24,8 +24,6 @@ const Filter = ({ onChange, ...props }) => {
         gap="xsmall"
         value={cameras}
         onChange={(event) => {
-          //   console.log("value: ", event.value);
-          //   console.log("option: ", event.option);
           setCameras(event.value);
         }}
         options={["Front", "Back"]}
@@ -37,8 +35,6 @@ const Filter = ({ onChange, ...props }) => {
         gap="xsmall"
         value={storage}
         onChange={(event) => {
-          //   console.log("value: ", event.value);
-          //   console.log("option: ", event.option);
           setStorage(event.value);
         }}
         options={["Local", "Cloud"]}

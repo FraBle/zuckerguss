@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
+import { Box } from "grommet";
 import WebRtcStreamer from "webrtc-streamer/html/webrtcstreamer";
+import Gps from "./Gps";
 
 const WebRTC = ({ webrtcurl, stream, height, width }) => {
   const videoElement = useRef(null);
@@ -13,15 +15,18 @@ const WebRTC = ({ webrtcurl, stream, height, width }) => {
   }, [webrtcurl, stream]);
 
   return (
-    <video
-      ref={videoElement}
-      muted
-      playsInline
-      height={height}
-      width={width}
-      style={{ objectFit: "cover" }}
-      poster="/loading.gif"
-    ></video>
+    <Box>
+      <video
+        ref={videoElement}
+        muted
+        playsInline
+        height={height}
+        width={width}
+        style={{ objectFit: "cover" }}
+        poster="/loading.gif"
+      ></video>
+      <Gps />
+    </Box>
   );
 };
 
