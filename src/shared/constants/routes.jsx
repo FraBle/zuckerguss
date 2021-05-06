@@ -1,4 +1,4 @@
-import { Configure, DocumentVideo, Home, Video } from "grommet-icons";
+import { Configure, DocumentVideo, Home, Video, Car } from "grommet-icons";
 
 export default Object.freeze({
   HOME: {
@@ -15,6 +15,11 @@ export default Object.freeze({
     id: "stream",
     route: "/stream",
     icon: <Video />,
+  },
+  CARINFO: {
+    id: "carinfo",
+    route: "/carinfo",
+    icon: <Car />,
   },
   SYSTEMINFO: {
     id: "systeminfo",
