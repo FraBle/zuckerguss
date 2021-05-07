@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Text, Box, Spinner, Clock } from "grommet";
 import { MapLocation, Clock as ClockIcon } from "grommet-icons";
 import useWebSocket from "react-use-websocket";
-import _ from "lodash";
 
 const Gps = () => {
   // Establish a shared websocket connection for system stats
