@@ -22,7 +22,7 @@ It runs together with [`guglhupf`](https://github.com/FraBle/guglhupf) behind an
 
 ## Prerequisites
 
-The follow tools should be installed:
+The following tools should be installed:
 
 | tool  | link                                                  | usage              |
 |-------|-------------------------------------------------------|--------------------|
@@ -91,7 +91,7 @@ The follow tools should be installed:
 
 ## Running `zuckerguss` behind `nginx`
 
-> Check out the [`guglhupf`](https://github.com/FraBle/guglhupf) on the `nginx` setup together with `guglhupf`.
+> Check out the [`guglhupf`](https://github.com/FraBle/guglhupf) repo on the `nginx` setup together with [`guglhupf`](https://github.com/FraBle/guglhupf).
 
 ## Creating a desktop shortcut
 

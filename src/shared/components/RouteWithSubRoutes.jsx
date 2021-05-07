@@ -1,13 +1,15 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-function RouteWithSubRoutes(route) {
+export const RouteWithSubRoutes = (route) => {
+  const { path } = route;
   return (
     <Route
-      path={route.path}
+      path={path}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       render={(props) => <route.component {...props} routes={route.routes} />}
     />
   );
-}
+};
 
-export default RouteWithSubRoutes;
+export { RouteWithSubRoutes as default };

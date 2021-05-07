@@ -12,33 +12,36 @@ import Titlebar from "./Titlebar";
 import routes from "../route";
 
 const theme = deepMerge(grommet, Theme);
-const App = () => {
-  return (
-    <Router>
-      <Grommet theme={theme} themeMode="light" full>
-        <Grid
-          fill
-          rows={["auto", "flex"]}
-          columns={["auto", "flex"]}
-          areas={[
-            { name: "titlebar", start: [0, 0], end: [1, 0] },
-            { name: "navbar", start: [0, 1], end: [0, 1] },
-            { name: "main", start: [1, 1], end: [1, 1] },
-          ]}
-        >
-          <Titlebar gridArea="titlebar" />
-          <Navbar gridArea="navbar" />
-          <Box gridArea="main" overflow="scroll">
-            <Switch>
-              {routes.map((route, i) => (
-                <RouteWithSubRoutes key={i} {...route} />
-              ))}
-            </Switch>
-          </Box>
-        </Grid>
-      </Grommet>
-    </Router>
-  );
-};
+const App = () => (
+  <Router>
+    <Grommet theme={theme} themeMode="light" full>
+      <Grid
+        fill
+        rows={["auto", "flex"]}
+        columns={["auto", "flex"]}
+        areas={[
+          { name: "titlebar", start: [0, 0], end: [1, 0] },
+          { name: "navbar", start: [0, 1], end: [0, 1] },
+          { name: "main", start: [1, 1], end: [1, 1] },
+        ]}
+      >
+        <Titlebar gridArea="titlebar" />
+        <Navbar gridArea="navbar" />
+        <Box gridArea="main" overflow="scroll">
+          <Switch>
+            {routes.map((route) => (
+              <RouteWithSubRoutes
+                key={route.path}
+                exact={route.exact}
+                path={route.path}
+                component={route.component}
+              />
+            ))}
+          </Switch>
+        </Box>
+      </Grid>
+    </Grommet>
+  </Router>
+);
 
 export default App;

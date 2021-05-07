@@ -1,10 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { createServer, Model, Factory } from "miragejs";
 import faker from "faker";
 import _ from "lodash";
 import moment from "moment";
 
-export function makeServer({ environment = "test" } = {}) {
-  let server = createServer({
+export const makeServer = ({ environment = "test" } = {}) => {
+  const mockServer = createServer({
     environment,
 
     models: {
@@ -68,18 +69,16 @@ export function makeServer({ environment = "test" } = {}) {
       this.urlPrefix = "http://192.168.146.192";
       this.namespace = "/api-dev/v1";
 
-      this.get("/stats/system", (schema) => {
-        return schema.attributes.where({ type: "system" });
-      });
-      this.get("/stats/video", (schema) => {
-        return schema.attributes.where({ type: "video" });
-      });
-      this.get("/stats/software", (schema) => {
-        return schema.attributes.where({ type: "software" });
-      });
-      this.get("/recordings", (schema) => {
-        return schema.recordings.all();
-      });
+      this.get("/stats/system", (schema) =>
+        schema.attributes.where({ type: "system" })
+      );
+      this.get("/stats/video", (schema) =>
+        schema.attributes.where({ type: "video" })
+      );
+      this.get("/stats/software", (schema) =>
+        schema.attributes.where({ type: "software" })
+      );
+      this.get("/recordings", (schema) => schema.recordings.all());
       this.get("/system", () => ({
         cpu: {
           arch: "ARMv7 Processor rev 3 (v7l)",
@@ -129,5 +128,7 @@ export function makeServer({ environment = "test" } = {}) {
       }));
     },
   });
-  return server;
-}
+  return mockServer;
+};
+
+export { makeServer as default };

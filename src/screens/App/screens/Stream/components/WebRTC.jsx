@@ -24,7 +24,7 @@ const WebRTC = ({ webrtcurl, stream, height, width }) => {
         width={width}
         style={{ objectFit: "cover" }}
         poster="/loading.gif"
-      ></video>
+      />
       <Gps />
     </Box>
   );

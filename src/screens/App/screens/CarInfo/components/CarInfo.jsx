@@ -13,16 +13,17 @@ const CarInfo = () => {
   const { lastJsonMessage, getWebSocket } = useWebSocket(
     `${process.env.REACT_APP_WEBSOCKET_URL}/car`,
     {
-      //Will attempt to reconnect on all close events, such as server shutting down
-      shouldReconnect: (_) => true,
+      // Will attempt to reconnect on all close events, such as server shutting down
+      shouldReconnect: () => true,
     }
   );
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       getWebSocket().close();
-    };
-  }, [getWebSocket]);
+    },
+    [getWebSocket]
+  );
 
   return !lastJsonMessage ? (
     <Box fill align="center" justify="center">
@@ -55,7 +56,7 @@ const CarInfo = () => {
         name="Load & Fuel"
         icon={<BarChart size="large" />}
         data={_.chain(lastJsonMessage)
-          .pickBy((_, k) => ["THROTTLE", "LOAD", "FUEL"].includes(k))
+          .pickBy((v, k) => ["THROTTLE", "LOAD", "FUEL"].includes(k))
           .toArray()
           .value()}
       />
@@ -63,7 +64,7 @@ const CarInfo = () => {
         name="Temperatures"
         icon={<Time size="large" />}
         data={_.chain(lastJsonMessage)
-          .pickBy((_, k) => ["OIL", "COOLANT", "INTAKE", "OUTSIDE"].includes(k))
+          .pickBy((v, k) => ["OIL", "COOLANT", "INTAKE", "OUTSIDE"].includes(k))
           .toArray()
           .value()}
       />

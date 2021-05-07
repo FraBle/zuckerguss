@@ -1,3 +1,4 @@
+import React from "react";
 import { Configure, DocumentVideo, Home, Video, Car } from "grommet-icons";
 
 export default Object.freeze({

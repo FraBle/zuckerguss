@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, CheckBoxGroup, Text } from "grommet";
 import _ from "lodash";
 
-const Filter = ({ onChange, ...props }) => {
+const Filter = ({ onChange, background, gridArea }) => {
   const [cameras, setCameras] = useState(["Front", "Back"]);
   const [storage, setStorage] = useState(["Local", "Cloud"]);
 
@@ -16,7 +16,7 @@ const Filter = ({ onChange, ...props }) => {
   );
 
   return (
-    <Box pad="medium" gap="xsmall" {...props}>
+    <Box pad="medium" gap="xsmall" background={background} gridArea={gridArea}>
       <Text weight="bold" margin={{ vertical: "small" }}>
         Camera
       </Text>

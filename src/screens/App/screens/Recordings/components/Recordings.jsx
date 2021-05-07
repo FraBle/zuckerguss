@@ -11,7 +11,7 @@ const CAMERA_FILTERS = ["front", "back"];
 const STORAGE_FILTERS = ["cloud", "local"];
 const ALLFILTERS = [...CAMERA_FILTERS, ...STORAGE_FILTERS];
 
-const Recordings = (props) => {
+const Recordings = () => {
   const [recordings, setRecordings] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState();
   const [showVideoModal, setShowVideoModal] = React.useState(false);
@@ -32,6 +32,7 @@ const Recordings = (props) => {
             ..._.reduce(
               _.concat(..._.values(filters)),
               (obj, filter) => {
+                // eslint-disable-next-line no-param-reassign
                 obj[filter] = _.includes(ALLFILTERS, filter);
                 return obj;
               },
@@ -70,38 +71,46 @@ const Recordings = (props) => {
         gap="small"
       >
         <Box gridArea="list" fill>
-          {isLoading ? (
-            <Box fill align="center" justify="center">
-              <Spinner size="large" />
-            </Box>
-          ) : _.isEmpty(recordings?.recordings ?? []) ? (
-            <Box fill align="center" justify="center">
-              <Heading level={4}>
-                No recordings available at the moment.
-              </Heading>
-            </Box>
-          ) : (
-            <List
-              data={recordings?.recordings ?? []}
-              step={5}
-              paginate
-              onClickItem={(event) => {
-                setShowVideoModal(true);
-                setSelectedVideo(event.item);
-              }}
-            >
-              {(datum) => (
-                <Box direction="row-responsive" gap="medium" align="center">
-                  {datum.uploaded ? (
-                    <DocumentCloud size="medium" />
-                  ) : (
-                    <DocumentStore size="medium" />
-                  )}
-                  <Text>{datum.fileName}</Text>
+          {(() => {
+            if (isLoading) {
+              return (
+                <Box fill align="center" justify="center">
+                  <Spinner size="large" />
                 </Box>
-              )}
-            </List>
-          )}
+              );
+            }
+            if (_.isEmpty(recordings?.recordings ?? [])) {
+              return (
+                <Box fill align="center" justify="center">
+                  <Heading level={4}>
+                    No recordings available at the moment.
+                  </Heading>
+                </Box>
+              );
+            }
+            return (
+              <List
+                data={recordings?.recordings ?? []}
+                step={5}
+                paginate
+                onClickItem={(event) => {
+                  setShowVideoModal(true);
+                  setSelectedVideo(event.item);
+                }}
+              >
+                {(datum) => (
+                  <Box direction="row-responsive" gap="medium" align="center">
+                    {datum.uploaded ? (
+                      <DocumentCloud size="medium" />
+                    ) : (
+                      <DocumentStore size="medium" />
+                    )}
+                    <Text>{datum.fileName}</Text>
+                  </Box>
+                )}
+              </List>
+            );
+          })()}
         </Box>
         <Filter background="light-5" gridArea="filter" onChange={setFilters} />
       </Grid>

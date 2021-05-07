@@ -1,5 +1,5 @@
 import { Routes } from "shared/constants";
-import Home from "./";
+import Home from ".";
 
 const route = {
   exact: true,

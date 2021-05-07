@@ -7,7 +7,7 @@ import { Routes } from "shared/constants";
 
 const navItems = Object.values(Routes);
 
-export const Navbar = ({ gridArea, history }) => {
+const Navbar = ({ gridArea, history }) => {
   const [activeNavItem, setActiveNavItem] = React.useState(
     _.trimStart(useLocation()?.pathname, "/")
   );
@@ -15,9 +15,9 @@ export const Navbar = ({ gridArea, history }) => {
   return (
     <Sidebar background="brand" gridArea={gridArea}>
       <Nav gap="small">
-        {navItems.map((navItem, i) => (
+        {navItems.map((navItem) => (
           <Button
-            key={i}
+            key={navItem.id}
             icon={navItem.icon}
             hoverIndicator
             active={activeNavItem === navItem.id}

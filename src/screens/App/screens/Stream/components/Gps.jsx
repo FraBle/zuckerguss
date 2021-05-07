@@ -8,16 +8,17 @@ const Gps = () => {
   const { lastMessage, getWebSocket } = useWebSocket(
     `${process.env.REACT_APP_WEBSOCKET_URL}/gps`,
     {
-      //Will attempt to reconnect on all close events, such as server shutting down
-      shouldReconnect: (_) => true,
+      // Will attempt to reconnect on all close events, such as server shutting down
+      shouldReconnect: () => true,
     }
   );
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       getWebSocket().close();
-    };
-  }, [getWebSocket]);
+    },
+    [getWebSocket]
+  );
 
   return !lastMessage ? (
     <Box fill align="center" justify="center">
