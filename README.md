@@ -7,12 +7,12 @@
 
 <div align="center">
 
-<!-- [![Travis CI][travis-badge]][travis-url]
+[![Travis CI][travis-badge]][travis-url]
 [![Codacy][codacy-badge]][codacy-url]
 [![Code Climate][code-climate-badge]][code-climate-url]
 [![CodeFactor][codefactor-badge]][codefactor-url]
 [![lgtm][lgtm-badge]][lgtm-url]
-[![SonarQube][sonarqube-badge]][sonarqube-url] -->
+[![SonarQube][sonarqube-badge]][sonarqube-url]
 
 </div>
 
@@ -126,19 +126,19 @@ Favicon made by [freepik.com](https://www.flaticon.com/free-icon/gugelhupf_94346
 <!--
 Badges
 -->
-<!-- [travis-badge]:https://img.shields.io/travis/com/FraBle/minigugl?label=Travis%20CI%20Build&style=flat-square
-[codacy-badge]:https://img.shields.io/codacy/grade/1e536b353e83451a968db54f7f230bf3?label=Codacy%20Grade&style=flat-square
-[code-climate-badge]:https://img.shields.io/codeclimate/maintainability/FraBle/minigugl?label=Code%20Climate%20Grade&style=flat-square
-[codefactor-badge]:https://img.shields.io/codefactor/grade/github/FraBle/minigugl/main?label=CodeFactor%20Grade&style=flat-square
-[lgtm-badge]:https://img.shields.io/lgtm/grade/python/github/FraBle/minigugl?label=lgtm%20Grade&style=flat-square
-[sonarqube-badge]:https://img.shields.io/sonar/tech_debt/minigugl?label=Sonar%20Tech%20Debt&server=https%3A%2F%2Fsonarcloud.io&style=flat-square -->
+[travis-badge]:https://img.shields.io/travis/com/FraBle/zuckerguss?label=Travis%20CI%20Build&style=flat-square
+[codacy-badge]:https://img.shields.io/codacy/grade/86a89814e43640fcbd0a807f525638b7?label=Codacy%20Grade&style=flat-square
+[code-climate-badge]:https://img.shields.io/codeclimate/maintainability/FraBle/zuckerguss?label=Code%20Climate%20Grade&style=flat-square
+[codefactor-badge]:https://img.shields.io/codefactor/grade/github/FraBle/zuckerguss/main?label=CodeFactor%20Grade&style=flat-square
+[lgtm-badge]:https://img.shields.io/lgtm/grade/javascript/github/FraBle/zuckerguss?label=lgtm%20Grade&style=flat-square
+[sonarqube-badge]:https://img.shields.io/sonar/tech_debt/FraBle_zuckerguss?label=Sonar%20Tech%20Debt&server=https%3A%2F%2Fsonarcloud.io&style=flat-square
 
 <!--
 Badge URLs
 -->
-<!-- [travis-url]:https://travis-ci.com/FraBle/minigugl
-[codacy-url]:https://app.codacy.com/gh/FraBle/minigugl
-[code-climate-url]:https://codeclimate.com/github/FraBle/minigugl
-[codefactor-url]:https://www.codefactor.io/repository/github/frable/minigugl
-[lgtm-url]:https://lgtm.com/projects/g/FraBle/minigugl/
-[sonarqube-url]:https://sonarcloud.io/dashboard?id=minigugl -->
+[travis-url]:https://travis-ci.com/FraBle/zuckerguss
+[codacy-url]:https://app.codacy.com/gh/FraBle/zuckerguss
+[code-climate-url]:https://codeclimate.com/github/FraBle/zuckerguss
+[codefactor-url]:https://www.codefactor.io/repository/github/frable/zuckerguss
+[lgtm-url]:https://lgtm.com/projects/g/FraBle/zuckerguss/
+[sonarqube-url]:https://sonarcloud.io/dashboard?id=FraBle_zuckerguss
