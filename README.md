@@ -16,15 +16,15 @@
 
 </div>
 
-`zuckerguss` (German for "icing") is the frontend for [`guglhupf`](https://github.com/FraBle/guglhupf)- the Raspberry Pi-powered dashcam control station.
-It's built on top of [React](https://reactjs.org/) uses the [`grommet`](https://v2.grommet.io/) component library.
+`zuckerguss` (German for "icing") is the frontend for [`guglhupf`](https://github.com/FraBle/guglhupf) — the Raspberry Pi-powered dashcam control station.
+It's built on top of [`react`](https://reactjs.org/) and uses the [`grommet`](https://v2.grommet.io/) component library.
 It runs together with [`guglhupf`](https://github.com/FraBle/guglhupf) behind an [`nginx`](https://nginx.org/) reverse proxy.
 
 ## Prerequisites
 
 The following tools should be installed:
 
-| tool  | link                                                  | usage              |
+| Tool  | Link                                                  | Usage              |
 |-------|-------------------------------------------------------|--------------------|
 | node  | [`docs`](https://nodejs.org/en/download/)             | JavaScript runtime |
 | yarn  | [`docs`](https://yarnpkg.com/getting-started/install) | Package manager    |
@@ -41,7 +41,7 @@ The following tools should be installed:
     git clone git@github.com:FraBle/zuckerguss.git
     ```
 
-2. Build `production build`.
+2. Create a `production` build.
 
     ```bash
     cd /usr/local/lib/zuckerguss
@@ -57,7 +57,9 @@ The following tools should be installed:
 
 4. Open your browser and browse to `http://<rpi-ip>:5000`.
 
-## Registering `zuckerguss` with `systemd`
+## Resources
+
+### Registering `zuckerguss` with `systemd`
 
 1. Create a  `systemd` entry.
 
@@ -89,11 +91,11 @@ The following tools should be installed:
 
 3. Open your browser and browse to `http://<rpi-ip>:5000`.
 
-## Running `zuckerguss` behind `nginx`
+### Running `zuckerguss` behind `nginx`
 
 > Check out the [`guglhupf`](https://github.com/FraBle/guglhupf) repo on the `nginx` setup together with [`guglhupf`](https://github.com/FraBle/guglhupf).
 
-## Creating a desktop shortcut
+### Creating a desktop shortcut
 
 > The following steps assume that `chromium-browser` is installed.
 
@@ -101,7 +103,7 @@ The following tools should be installed:
 
 2. Create a  `.desktop` file.
 
-    `nano guglhupf.desktope`:
+    `nano guglhupf.desktop`:
 
     ```ini
     [Desktop Entry]
