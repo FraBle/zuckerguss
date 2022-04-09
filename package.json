@@ -38,7 +38,7 @@
         "eslint-plugin-react-hooks": "^4.2.0",
         "faker": "^5.5.3",
         "miragejs": "^0.1.41",
-        "moment": "^2.29.1",
+        "moment": "^2.29.2",
         "prettier": "^2.2.1",
         "react-scripts": "^4.0.3"
     },
